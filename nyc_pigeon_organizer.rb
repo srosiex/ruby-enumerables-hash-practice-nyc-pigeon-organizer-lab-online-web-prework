@@ -6,5 +6,5 @@ data.each do |attribute_category, attribute_data_hash|
     name_array.each do |name|
       new_pigeon_data[name] = {:color => [], :gender => [], :lives => []}
 end
-end      
+end
 end
