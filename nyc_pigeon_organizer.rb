@@ -1,10 +1,23 @@
+
 def nyc_pigeon_organizer(data)
-  # write your code here!
-new_pigeon_data = {}
-data.each do |attribute_category, attribute_data_hash|
-  attribute_data_hash.each do |attribute, name_array|
-    name_array.each do |name|
-      new_pigeon_data[name] = {:color => [], :gender => [], :lives => []}
+# write your code here!
+new_hash = {}
+data.each do |property, hash|
+hash.each do |attribute, array|
+  array.each do |name|
+    if !new_hash.has_key?(name)
+      new_hash[name] = {}
+    end
+
+    if !new_hash[name].has_key?(property)
+      new_hash[name][property] = []
+    end
+
+    if !new_hash[name][property].include?(attribute)
+      new_hash[name][property] << attribute.to_s
+    end
+  end
 end
 end
+new_hash
 end
